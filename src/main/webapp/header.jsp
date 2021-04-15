@@ -1,10 +1,3 @@
-<%-- 
-    Document   : header
-    Created on : 2021-4-15, 2:05:17
-    Author     : winsonlo
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     

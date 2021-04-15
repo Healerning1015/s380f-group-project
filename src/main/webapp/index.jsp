@@ -1,40 +1,24 @@
-<%-- 
-    Document   : index
-    Created on : 2021-4-15, 1:19:19
-    Author     : winsonlo
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String[] productList = {"Apple", "Banana", "Cherry"};
+    request.setAttribute("productList", productList);
+%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Fast Food Ordering System</title>
+        <title>HOME | Fast Food Ordering System</title>
     </head>
+    <c:import url="header.jsp"></c:import>
     <body>       
-        <!--商品列表-->
-        <div>
-            <ul>
-                <li>
-                    <img src="">
-                    <div class="product_info">
-                        <a href="#">Apple</a>
-                        <p>苹果是一种水果，同时也是手机品牌</p>
-                    </div>
-                    <div>
-                        <!-- 价格，购买logo -->
-                        <div class="price">¥ 2300</div>
-                        <!-- 购物车按钮 -->
-                        <div class="btn">
-                            <a href="#" class="cart">
-                                add to cart
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        
-        
+        <h2>Product List:</h2>
+        <table border="1">
+            <c:forEach var="product" items="${productList}">
+                <ul>
+                    <li>${product}</li>
+                    <a href="#">Add to Cart</a>
+                </ul>
+            </c:forEach>
+        </table>    
     </body>
 </html>
